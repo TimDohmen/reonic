@@ -10,10 +10,10 @@ import {
   IonTabs
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { square, triangle, images } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
+import { images, cash, camera } from 'ionicons/icons';
+import IonicPayments from './pages/IonicPayments';
+import Photos from './pages/Photos';
+import IonicGram from './pages/IonicGram';
 import Details from './pages/Details';
 
 /* Core CSS required for Ionic components to work properly */
@@ -43,24 +43,24 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route path="/tab1" component={Tab1} exact={true} />
-          <Route path="/tab2" component={Tab2} exact={true} />
-          <Route path="/tab2/details" component={Details} />
-          <Route path="/tab3" component={Tab3} />
-          <Route path="/" render={() => <Redirect to="/tab1" />} exact={true} />
+          <Route path="/payments" component={IonicPayments} exact={true} />
+          <Route path="/photos" component={Photos} exact={true} />
+          <Route path="/photos/details" component={Details} />
+          <Route path="/IonicGram" component={IonicGram} />
+          <Route path="/" render={() => <Redirect to="/payments" />} exact={true} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon icon={triangle} />
-            <IonLabel>Tab One</IonLabel>
+          <IonTabButton tab="payments" href="/payments">
+            <IonIcon icon={cash} />
+            <IonLabel>IonicPayments</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
+          <IonTabButton tab="photos" href="/photos">
             <IonIcon icon={images} />
             <IonLabel>Photos</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon={square} />
-            <IonLabel>Tab Three</IonLabel>
+          <IonTabButton tab="IonicGram" href="/IonicGram">
+            <IonIcon icon={camera} />
+            <IonLabel>IonicGram</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
